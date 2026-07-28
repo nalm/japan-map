@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>일본 주요 섬 · 지방 · 도도부현</title>
+<style>
+  :root {
+    --paper: #f6f3ec;
+    --ink: #21262f;
+    --ink-soft: #5a6472;
+    --rule: #cfc8ba;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 24px 18px 40px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  .eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: .28em;
+    color: var(--ink-soft); text-transform: uppercase; margin: 0 0 10px;
+  }
+  h1 { font-size: clamp(22px, 4.6vw, 34px); font-weight: 800; letter-spacing: -.02em; margin: 0 0 8px; }
+  h1 .jp { font-weight: 500; color: var(--ink-soft); font-size: .62em; margin-left: .5em; letter-spacing: 0; }
+  .lede { font-size: 14px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 6px; max-width: 62ch; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 18px 0 4px; }
+  svg { width: 100%; height: auto; display: block; }
+
+  .tile rect { transition: transform .12s ease, filter .12s ease; }
+  .tile { cursor: default; outline: none; }
+  .tile:hover rect, .tile:focus rect { filter: brightness(1.07) saturate(1.15); stroke-width: 2.6; }
+  .nm { font-size: 12px; font-weight: 700; fill: #1b1f26; text-anchor: middle; }
+  .bd { font-size: 10px; font-weight: 700; fill: #1b1f26; opacity: .78; text-anchor: middle; }
+  .tile rect { stroke-width: 1.4; }
+    .hok rect { fill: #96b9d0; stroke: #4a7d97; }
+    .toh rect { fill: #9fc9a8; stroke: #4c8158; }
+    .kan rect { fill: #f0c76c; stroke: #a97f22; }
+    .chu rect { fill: #b3aede; stroke: #635aa4; }
+    .kin rect { fill: #f0a19c; stroke: #b1544f; }
+    .cgk rect { fill: #9ccfc4; stroke: #428379; }
+    .shi rect { fill: #e0c977; stroke: #9a832b; }
+    .kyu rect { fill: #e7a5be; stroke: #a9587a; }
+
+  .isle { fill: none; stroke: #6b7481; stroke-width: 2; stroke-dasharray: 7 5; }
+  .islbl { font-size: 13px; font-weight: 800; fill: #3c4450; text-anchor: middle; }
+  .lg { font-size: 12.5px; fill: var(--ink); }
+  .lgn { font-size: 12.5px; font-weight: 700; fill: var(--ink-soft); text-anchor: end; }
+  .lgh { font-size: 12px; font-weight: 800; fill: var(--ink); letter-spacing: .06em; }
+  .note { font-size: 11.5px; fill: var(--ink-soft); }
+
+  #info {
+    margin-top: 14px; border: 1px solid var(--rule); border-radius: 10px;
+    background: #fffdf8; padding: 14px 16px; min-height: 62px;
+  }
+  #info .ttl { font-size: 16px; font-weight: 800; }
+  #info .meta { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+  #info .city { font-size: 13px; margin-top: 8px; }
+  #info .hint { font-size: 13px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Japan · 1都 1道 2府 43県</p>
+  <h1>주요 섬 · 지방 · 도도부현<span class="jp">主要な島・地方・都道府県</span></h1>
+  <p class="lede">타일 하나가 도도부현 하나입니다. 실제 지리 위치를 살려 남서(규슈)에서 북동(홋카이도)으로 배열했고, 색은 8개 지방, 점선은 섬 경계를 나타냅니다.</p>
+  <hr>
+
+  <svg viewBox="0 0 880 920" xmlns="http://www.w3.org/2000/svg" role="img"
+       aria-label="일본 47개 도도부현을 지방별 색과 섬별 점선 경계로 표시한 타일 지도">
+    <!-- 섬 경계 -->
+    <path class="isle" d="M719 201 H781 V449 H843 V573 H719 V635 H409 V697 H347 V635 H161 V573 H223 V511 H409 V449 H657 V263 H719 Z"/>
+    <rect class="isle" x="781" y="77" width="62" height="62" rx="8"/>
+    <rect class="isle" x="223" y="635" width="124" height="124" rx="8"/>
+    <rect class="isle" x="37" y="635" width="186" height="186" rx="8"/>
+    <rect class="isle" x="37" y="821" width="62" height="62" rx="8"/>
+
+    <text class="islbl" x="812" y="66">홋카이도 北海道</text>
+    <text class="islbl" x="600" y="437">혼슈 本州</text>
+    <text class="islbl" x="285" y="783">시코쿠 四国</text>
+    <text class="islbl" x="99" y="616">규슈 九州</text>
+    <text class="islbl" x="186" y="860">오키나와 沖縄</text>
+
+    <g class="tile hok" data-name="홋카이도" data-region="홋카이도 지방 (北海道)" data-island="홋카이도" data-cities="삿포로시 · 하코다테시 · 아사히카와시" tabindex="0"><rect x="784" y="80" width="56" height="56" rx="6"/><text class="nm" x="812.0" y="104">홋카이도</text><text class="bd" x="812.0" y="121">道</text></g>
+    <g class="tile toh" data-name="아오모리현" data-region="도호쿠 지방 (東北)" data-island="혼슈" data-cities="아오모리시 · 하치노헤시" tabindex="0"><rect x="722" y="204" width="56" height="56" rx="6"/><text class="nm" x="750.0" y="238">아오모리</text></g>
+    <g class="tile toh" data-name="아키타현" data-region="도호쿠 지방 (東北)" data-island="혼슈" data-cities="아키타시" tabindex="0"><rect x="660" y="266" width="56" height="56" rx="6"/><text class="nm" x="688.0" y="300">아키타</text></g>
+    <g class="tile toh" data-name="이와테현" data-region="도호쿠 지방 (東北)" data-island="혼슈" data-cities="모리오카시" tabindex="0"><rect x="722" y="266" width="56" height="56" rx="6"/><text class="nm" x="750.0" y="300">이와테</text></g>
+    <g class="tile toh" data-name="야마가타현" data-region="도호쿠 지방 (東北)" data-island="혼슈" data-cities="야마가타시" tabindex="0"><rect x="660" y="328" width="56" height="56" rx="6"/><text class="nm" x="688.0" y="362">야마가타</text></g>
+    <g class="tile toh" data-name="미야기현" data-region="도호쿠 지방 (東北)" data-island="혼슈" data-cities="센다이시" tabindex="0"><rect x="722" y="328" width="56" height="56" rx="6"/><text class="nm" x="750.0" y="362">미야기</text></g>
+    <g class="tile toh" data-name="후쿠시마현" data-region="도호쿠 지방 (東北)" data-island="혼슈" data-cities="후쿠시마시 · 고리야마시" tabindex="0"><rect x="722" y="390" width="56" height="56" rx="6"/><text class="nm" x="750.0" y="424">후쿠시마</text></g>
+    <g class="tile chu" data-name="니가타현" data-region="주부 지방 (中部)" data-island="혼슈" data-cities="니가타시" tabindex="0"><rect x="660" y="390" width="56" height="56" rx="6"/><text class="nm" x="688.0" y="424">니가타</text></g>
+    <g class="tile chu" data-name="후쿠이현" data-region="주부 지방 (中部)" data-island="혼슈" data-cities="후쿠이시" tabindex="0"><rect x="412" y="452" width="56" height="56" rx="6"/><text class="nm" x="440.0" y="486">후쿠이</text></g>
+    <g class="tile chu" data-name="이시카와현" data-region="주부 지방 (中部)" data-island="혼슈" data-cities="가나자와시" tabindex="0"><rect x="474" y="452" width="56" height="56" rx="6"/><text class="nm" x="502.0" y="486">이시카와</text></g>
+    <g class="tile chu" data-name="도야마현" data-region="주부 지방 (中部)" data-island="혼슈" data-cities="도야마시" tabindex="0"><rect x="536" y="452" width="56" height="56" rx="6"/><text class="nm" x="564.0" y="486">도야마</text></g>
+    <g class="tile chu" data-name="나가노현" data-region="주부 지방 (中部)" data-island="혼슈" data-cities="나가노시 · 마쓰모토시" tabindex="0"><rect x="598" y="452" width="56" height="56" rx="6"/><text class="nm" x="626.0" y="486">나가노</text></g>
+    <g class="tile chu" data-name="기후현" data-region="주부 지방 (中部)" data-island="혼슈" data-cities="기후시" tabindex="0"><rect x="536" y="514" width="56" height="56" rx="6"/><text class="nm" x="564.0" y="548">기후</text></g>
+    <g class="tile chu" data-name="야마나시현" data-region="주부 지방 (中部)" data-island="혼슈" data-cities="고후시" tabindex="0"><rect x="598" y="514" width="56" height="56" rx="6"/><text class="nm" x="626.0" y="548">야마나시</text></g>
+    <g class="tile chu" data-name="아이치현" data-region="주부 지방 (中部)" data-island="혼슈" data-cities="나고야시 · 도요타시 · 오카자키시" tabindex="0"><rect x="536" y="576" width="56" height="56" rx="6"/><text class="nm" x="564.0" y="610">아이치</text></g>
+    <g class="tile chu" data-name="시즈오카현" data-region="주부 지방 (中部)" data-island="혼슈" data-cities="시즈오카시 · 하마마쓰시" tabindex="0"><rect x="598" y="576" width="56" height="56" rx="6"/><text class="nm" x="626.0" y="610">시즈오카</text></g>
+    <g class="tile kan" data-name="군마현" data-region="간토 지방 (関東)" data-island="혼슈" data-cities="마에바시시 · 다카사키시" tabindex="0"><rect x="660" y="452" width="56" height="56" rx="6"/><text class="nm" x="688.0" y="486">군마</text></g>
+    <g class="tile kan" data-name="도치기현" data-region="간토 지방 (関東)" data-island="혼슈" data-cities="우쓰노미야시" tabindex="0"><rect x="722" y="452" width="56" height="56" rx="6"/><text class="nm" x="750.0" y="486">도치기</text></g>
+    <g class="tile kan" data-name="이바라키현" data-region="간토 지방 (関東)" data-island="혼슈" data-cities="미토시 · 쓰쿠바시" tabindex="0"><rect x="784" y="452" width="56" height="56" rx="6"/><text class="nm" x="812.0" y="486">이바라키</text></g>
+    <g class="tile kan" data-name="사이타마현" data-region="간토 지방 (関東)" data-island="혼슈" data-cities="사이타마시 · 가와구치시" tabindex="0"><rect x="660" y="514" width="56" height="56" rx="6"/><text class="nm" x="688.0" y="548">사이타마</text></g>
+    <g class="tile kan" data-name="도쿄도" data-region="간토 지방 (関東)" data-island="혼슈" data-cities="특별구 23구(신주쿠구 등) · 하치오지시" tabindex="0"><rect x="722" y="514" width="56" height="56" rx="6"/><text class="nm" x="750.0" y="538">도쿄</text><text class="bd" x="750.0" y="555">都</text></g>
+    <g class="tile kan" data-name="지바현" data-region="간토 지방 (関東)" data-island="혼슈" data-cities="지바시 · 후나바시시" tabindex="0"><rect x="784" y="514" width="56" height="56" rx="6"/><text class="nm" x="812.0" y="548">지바</text></g>
+    <g class="tile kan" data-name="가나가와현" data-region="간토 지방 (関東)" data-island="혼슈" data-cities="요코하마시 · 가와사키시 · 사가미하라시" tabindex="0"><rect x="660" y="576" width="56" height="56" rx="6"/><text class="nm" x="688.0" y="610">가나가와</text></g>
+    <g class="tile kin" data-name="효고현" data-region="긴키 지방 (近畿)" data-island="혼슈" data-cities="고베시 · 히메지시 · 니시노미야시" tabindex="0"><rect x="350" y="514" width="56" height="56" rx="6"/><text class="nm" x="378.0" y="548">효고</text></g>
+    <g class="tile kin" data-name="교토부" data-region="긴키 지방 (近畿)" data-island="혼슈" data-cities="교토시" tabindex="0"><rect x="412" y="514" width="56" height="56" rx="6"/><text class="nm" x="440.0" y="538">교토</text><text class="bd" x="440.0" y="555">府</text></g>
+    <g class="tile kin" data-name="시가현" data-region="긴키 지방 (近畿)" data-island="혼슈" data-cities="오쓰시" tabindex="0"><rect x="474" y="514" width="56" height="56" rx="6"/><text class="nm" x="502.0" y="548">시가</text></g>
+    <g class="tile kin" data-name="오사카부" data-region="긴키 지방 (近畿)" data-island="혼슈" data-cities="오사카시 · 사카이시 · 히가시오사카시" tabindex="0"><rect x="350" y="576" width="56" height="56" rx="6"/><text class="nm" x="378.0" y="600">오사카</text><text class="bd" x="378.0" y="617">府</text></g>
+    <g class="tile kin" data-name="나라현" data-region="긴키 지방 (近畿)" data-island="혼슈" data-cities="나라시" tabindex="0"><rect x="412" y="576" width="56" height="56" rx="6"/><text class="nm" x="440.0" y="610">나라</text></g>
+    <g class="tile kin" data-name="미에현" data-region="긴키 지방 (近畿)" data-island="혼슈" data-cities="쓰시 · 욧카이치시" tabindex="0"><rect x="474" y="576" width="56" height="56" rx="6"/><text class="nm" x="502.0" y="610">미에</text></g>
+    <g class="tile kin" data-name="와카야마현" data-region="긴키 지방 (近畿)" data-island="혼슈" data-cities="와카야마시" tabindex="0"><rect x="350" y="638" width="56" height="56" rx="6"/><text class="nm" x="378.0" y="672">와카야마</text></g>
+    <g class="tile cgk" data-name="시마네현" data-region="주고쿠 지방 (中国)" data-island="혼슈" data-cities="마쓰에시" tabindex="0"><rect x="226" y="514" width="56" height="56" rx="6"/><text class="nm" x="254.0" y="548">시마네</text></g>
+    <g class="tile cgk" data-name="돗토리현" data-region="주고쿠 지방 (中国)" data-island="혼슈" data-cities="돗토리시" tabindex="0"><rect x="288" y="514" width="56" height="56" rx="6"/><text class="nm" x="316.0" y="548">돗토리</text></g>
+    <g class="tile cgk" data-name="야마구치현" data-region="주고쿠 지방 (中国)" data-island="혼슈" data-cities="야마구치시 · 시모노세키시" tabindex="0"><rect x="164" y="576" width="56" height="56" rx="6"/><text class="nm" x="192.0" y="610">야마구치</text></g>
+    <g class="tile cgk" data-name="히로시마현" data-region="주고쿠 지방 (中国)" data-island="혼슈" data-cities="히로시마시 · 후쿠야마시" tabindex="0"><rect x="226" y="576" width="56" height="56" rx="6"/><text class="nm" x="254.0" y="610">히로시마</text></g>
+    <g class="tile cgk" data-name="오카야마현" data-region="주고쿠 지방 (中国)" data-island="혼슈" data-cities="오카야마시 · 구라시키시" tabindex="0"><rect x="288" y="576" width="56" height="56" rx="6"/><text class="nm" x="316.0" y="610">오카야마</text></g>
+    <g class="tile shi" data-name="에히메현" data-region="시코쿠 지방 (四国)" data-island="시코쿠" data-cities="마쓰야마시" tabindex="0"><rect x="226" y="638" width="56" height="56" rx="6"/><text class="nm" x="254.0" y="672">에히메</text></g>
+    <g class="tile shi" data-name="가가와현" data-region="시코쿠 지방 (四国)" data-island="시코쿠" data-cities="다카마쓰시" tabindex="0"><rect x="288" y="638" width="56" height="56" rx="6"/><text class="nm" x="316.0" y="672">가가와</text></g>
+    <g class="tile shi" data-name="고치현" data-region="시코쿠 지방 (四国)" data-island="시코쿠" data-cities="고치시" tabindex="0"><rect x="226" y="700" width="56" height="56" rx="6"/><text class="nm" x="254.0" y="734">고치</text></g>
+    <g class="tile shi" data-name="도쿠시마현" data-region="시코쿠 지방 (四国)" data-island="시코쿠" data-cities="도쿠시마시" tabindex="0"><rect x="288" y="700" width="56" height="56" rx="6"/><text class="nm" x="316.0" y="734">도쿠시마</text></g>
+    <g class="tile kyu" data-name="사가현" data-region="규슈·오키나와 지방 (九州·沖縄)" data-island="규슈" data-cities="사가시" tabindex="0"><rect x="40" y="638" width="56" height="56" rx="6"/><text class="nm" x="68.0" y="672">사가</text></g>
+    <g class="tile kyu" data-name="후쿠오카현" data-region="규슈·오키나와 지방 (九州·沖縄)" data-island="규슈" data-cities="후쿠오카시 · 기타큐슈시 · 구루메시" tabindex="0"><rect x="102" y="638" width="56" height="56" rx="6"/><text class="nm" x="130.0" y="672">후쿠오카</text></g>
+    <g class="tile kyu" data-name="오이타현" data-region="규슈·오키나와 지방 (九州·沖縄)" data-island="규슈" data-cities="오이타시" tabindex="0"><rect x="164" y="638" width="56" height="56" rx="6"/><text class="nm" x="192.0" y="672">오이타</text></g>
+    <g class="tile kyu" data-name="나가사키현" data-region="규슈·오키나와 지방 (九州·沖縄)" data-island="규슈" data-cities="나가사키시 · 사세보시" tabindex="0"><rect x="40" y="700" width="56" height="56" rx="6"/><text class="nm" x="68.0" y="734">나가사키</text></g>
+    <g class="tile kyu" data-name="구마모토현" data-region="규슈·오키나와 지방 (九州·沖縄)" data-island="규슈" data-cities="구마모토시" tabindex="0"><rect x="102" y="700" width="56" height="56" rx="6"/><text class="nm" x="130.0" y="734">구마모토</text></g>
+    <g class="tile kyu" data-name="미야자키현" data-region="규슈·오키나와 지방 (九州·沖縄)" data-island="규슈" data-cities="미야자키시" tabindex="0"><rect x="164" y="700" width="56" height="56" rx="6"/><text class="nm" x="192.0" y="734">미야자키</text></g>
+    <g class="tile kyu" data-name="가고시마현" data-region="규슈·오키나와 지방 (九州·沖縄)" data-island="규슈" data-cities="가고시마시" tabindex="0"><rect x="102" y="762" width="56" height="56" rx="6"/><text class="nm" x="130.0" y="796">가고시마</text></g>
+    <g class="tile kyu" data-name="오키나와현" data-region="규슈·오키나와 지방 (九州·沖縄)" data-island="규슈" data-cities="나하시 · 오키나와시" tabindex="0"><rect x="40" y="824" width="56" height="56" rx="6"/><text class="nm" x="68.0" y="858">오키나와</text></g>
+
+    <!-- 범례 -->
+    <rect x="40" y="104" width="352" height="342" rx="10" fill="#fffdf8" stroke="#cfc8ba"/>
+    <text class="lgh" x="60" y="132">지방 구분</text>
+    <text class="lgn" x="368" y="132">개수</text>
+    <line x1="60" y1="140" x2="372" y2="140" stroke="#e2dccf"/>
+    <rect x="60" y="141" width="15" height="15" rx="3" fill="#96b9d0" stroke="#4a7d97"/><text class="lg" x="86" y="152">홋카이도 (北海道)</text><text class="lgn" x="368" y="152">1</text>
+    <rect x="60" y="167" width="15" height="15" rx="3" fill="#9fc9a8" stroke="#4c8158"/><text class="lg" x="86" y="178">도호쿠 (東北)</text><text class="lgn" x="368" y="178">6</text>
+    <rect x="60" y="193" width="15" height="15" rx="3" fill="#f0c76c" stroke="#a97f22"/><text class="lg" x="86" y="204">간토 (関東)</text><text class="lgn" x="368" y="204">7</text>
+    <rect x="60" y="219" width="15" height="15" rx="3" fill="#b3aede" stroke="#635aa4"/><text class="lg" x="86" y="230">주부 (中部)</text><text class="lgn" x="368" y="230">9</text>
+    <rect x="60" y="245" width="15" height="15" rx="3" fill="#f0a19c" stroke="#b1544f"/><text class="lg" x="86" y="256">긴키 (近畿)</text><text class="lgn" x="368" y="256">7</text>
+    <rect x="60" y="271" width="15" height="15" rx="3" fill="#9ccfc4" stroke="#428379"/><text class="lg" x="86" y="282">주고쿠 (中国)</text><text class="lgn" x="368" y="282">5</text>
+    <rect x="60" y="297" width="15" height="15" rx="3" fill="#e0c977" stroke="#9a832b"/><text class="lg" x="86" y="308">시코쿠 (四国)</text><text class="lgn" x="368" y="308">4</text>
+    <rect x="60" y="323" width="15" height="15" rx="3" fill="#e7a5be" stroke="#a9587a"/><text class="lg" x="86" y="334">규슈·오키나와 (九州·沖縄)</text><text class="lgn" x="368" y="334">8</text>
+    <line x1="60" y1="366" x2="372" y2="366" stroke="#e2dccf"/>
+    <text class="note" x="60" y="386">점선 = 섬 경계 · 혼슈 / 홋카이도 / 시코쿠 / 규슈 / 오키나와</text>
+    <text class="note" x="60" y="406">都 도쿄도 · 道 홋카이도 · 府 오사카부, 교토부</text>
+    <text class="note" x="60" y="426">나머지 43곳은 모두 현(県) → 합계 47개</text>
+  </svg>
+
+  <div id="info"><span class="hint">타일에 마우스를 올리거나 탭하면 지방 · 섬 · 주요 도시가 표시됩니다.</span></div>
+</div>
+
+<script>
+  var info = document.getElementById('info');
+  var idle = info.innerHTML;
+  function show(g) {
+    info.innerHTML =
+      '<div class="ttl">' + g.dataset.name + '</div>' +
+      '<div class="meta">' + g.dataset.region + ' · ' + g.dataset.island + '</div>' +
+      '<div class="city">주요 도시 — ' + g.dataset.cities + '</div>';
+  }
+  document.querySelectorAll('.tile').forEach(function (g) {
+    g.addEventListener('mouseenter', function () { show(g); });
+    g.addEventListener('focus', function () { show(g); });
+    g.addEventListener('click', function () { show(g); });
+    g.addEventListener('mouseleave', function () { info.innerHTML = idle; });
+  });
+</script>
+</body>
+</html>
